@@ -75,16 +75,23 @@
         .timeline-line {
             background: linear-gradient(to bottom, #8b5cf6, #3b82f6, #0f172a);
         }
+        
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-sm border-b border-gray-800">
+    <nav class="w-full z-50 bg-dark/90 backdrop-blur-sm border-b border-gray-800">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-bold tracking-wide text-white">
                 HU<span class="text-violet-500">.</span>
             </a>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="#about" class="hover:text-violet-400 transition duration-300">About</a>
                 <a href="#skills" class="hover:text-violet-400 transition duration-300">Skills</a>
@@ -92,10 +99,22 @@
                 <a href="#projects" class="hover:text-violet-400 transition duration-300">Projects</a>
                 <a href="#contact" class="hover:text-violet-400 transition duration-300">Contact</a>
             </div>
+            
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-white focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden bg-dark/95 backdrop-blur-sm border-b border-gray-800 hidden">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4 font-medium">
+                <a href="#about" class="hover:text-violet-400 transition duration-300 py-2">About</a>
+                <a href="#skills" class="hover:text-violet-400 transition duration-300 py-2">Skills</a>
+                <a href="#experience" class="hover:text-violet-400 transition duration-300 py-2">Experience</a>
+                <a href="#projects" class="hover:text-violet-400 transition duration-300 py-2">Projects</a>
+                <a href="#contact" class="hover:text-violet-400 transition duration-300 py-2">Contact</a>
+            </div>
         </div>
     </nav>
 
@@ -333,48 +352,37 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Project 1 -->
-                <!-- <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-utensils text-2xl text-orange-400"></i>
-                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React Native</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">Millet Kitchen Food App</h3>
-                        <p class="text-gray-400 text-sm mb-4">Food ordering app with cart management via Context API, Razorpay integration, and tracking deliveries.</p>
-                    </div>
-                </div> -->
                 <a
-  href="https://play.google.com/store/apps/details?id=com.mkf"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="block"
->
-  <div
-    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300"
-    data-aos="flip-left"
-  >
-    <div class="p-6">
-      <div class="flex justify-between items-start mb-4">
-        <i class="fas fa-utensils text-2xl text-orange-400"></i>
-        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">
-          React Native
-        </span>
-      </div>
+                  href="https://play.google.com/store/apps/details?id=com.mkf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                  <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300"
+                    data-aos="flip-left"
+                  >
+                    <div class="p-6">
+                      <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-utensils text-2xl text-orange-400"></i>
+                        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">
+                          React Native
+                        </span>
+                      </div>
 
-      <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">
-        Millet Kitchen Food App
-      </h3>
+                      <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">
+                        Millet Kitchen Food App
+                      </h3>
 
-      <p class="text-gray-400 text-sm mb-4">
-        Food ordering app with cart management via Context API, Razorpay integration,
-        and real-time delivery tracking.
-      </p>
-    </div>
-  </div>
-</a>
+                      <p class="text-gray-400 text-sm mb-4">
+                        Food ordering app with cart management via Context API, Razorpay integration,
+                        and real-time delivery tracking.
+                      </p>
+                    </div>
+                  </div>
+                </a>
 
                 <!-- Project 2 -->
-              
                 <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="100">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
@@ -399,43 +407,31 @@
                 </div>
 
                 <!-- Project 4 -->
-                <!-- <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="300">
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <i class="fas fa-book-open text-2xl text-green-400"></i>
-                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React Native</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">CreoSmart LMS</h3>
-                        <p class="text-gray-400 text-sm mb-4">LMS with course listings, user progress tracking, and assessment features for a smooth learning experience.</p>
-                    </div>
-                </div> -->
-
                 <a 
-  href="https://play.google.com/store/apps/details?id=com.shreea.MyTestSeries"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="block"
->
-    <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="300">
-        <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-                <i class="fas fa-book-open text-2xl text-green-400"></i>
-                <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React Native</span>
-            </div>
+                  href="https://play.google.com/store/apps/details?id=com.shreea.MyTestSeries"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block"
+                >
+                    <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="300">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <i class="fas fa-book-open text-2xl text-green-400"></i>
+                                <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React Native</span>
+                            </div>
 
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">
-                CreoSmart LMS
-            </h3>
+                            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">
+                                CreoSmart LMS
+                            </h3>
 
-            <p class="text-gray-400 text-sm mb-4">
-                LMS with course listings, user progress tracking, and assessment features for a smooth learning experience.
-            </p>
-        </div>
-    </div>
-</a>
+                            <p class="text-gray-400 text-sm mb-4">
+                                LMS with course listings, user progress tracking, and assessment features for a smooth learning experience.
+                            </p>
+                        </div>
+                    </div>
+                </a>
 
                 <!-- Project 5 -->
-                
                 <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="400">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-4">
@@ -483,6 +479,44 @@
             <p class="text-gray-600 text-sm">© 2025 Harshit Upadhyay. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuButton.querySelector('i');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                // Toggle mobile menu visibility
+                mobileMenu.classList.toggle('hidden');
+                
+                // Toggle between hamburger and close icon
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.className = 'fas fa-bars text-2xl';
+                } else {
+                    menuIcon.className = 'fas fa-times text-2xl';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fas fa-bars text-2xl';
+                });
+            });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.className = 'fas fa-bars text-2xl';
+                }
+            });
+        });
+    </script>
 
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
