@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Upadhyay | Portfolio</title>
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Config for Single Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        themePrimary: '#8b5cf6', // Violet 500
+                        themeSecondary: '#3b82f6', // Blue 500
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0f172a; /* Slate 900 */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #8b5cf6, #3b82f6);
+            border-radius: 5px;
+        }
+
+        /* Gradient Text Utility */
+        .text-gradient {
+            background: linear-gradient(to right, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Gradient Border/Background Utility */
+        .bg-gradient-theme {
+            background: linear-gradient(to right, #8b5cf6, #3b82f6);
+        }
+        
+        .bg-gradient-theme-vertical {
+            background: linear-gradient(to bottom, #8b5cf6, #3b82f6);
+        }
+
+        /* Timeline Specifics */
+        .timeline-line {
+            background: linear-gradient(to bottom, #8b5cf6, #3b82f6, #0f172a);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/90 backdrop-blur-sm border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-wide text-white">
+                HU<span class="text-violet-500">.</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#about" class="hover:text-violet-400 transition duration-300">About</a>
+                <a href="#skills" class="hover:text-violet-400 transition duration-300">Skills</a>
+                <a href="#experience" class="hover:text-violet-400 transition duration-300">Experience</a>
+                <a href="#projects" class="hover:text-violet-400 transition duration-300">Projects</a>
+                <a href="#contact" class="hover:text-violet-400 transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <!-- Background Blobs -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div class="absolute top-20 right-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+
+        <div class="container mx-auto px-6 text-center z-10" data-aos="zoom-in" data-aos-duration="1000">
+            <h2 class="text-xl md:text-2xl font-medium text-gray-400 mb-4">Hello, I am</h2>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">
+                Harshit <span class="text-gradient">Upadhyay</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Android & Web Developer specializing in <span class="text-violet-400 font-semibold">React Native</span>, <span class="text-violet-400 font-semibold">React.js</span>, and Scalable Solutions.
+            </p>
+            
+            <div class="flex justify-center gap-4">
+                <a href="#contact" class="px-8 py-3 rounded-full bg-gradient-theme text-white font-semibold shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transform hover:-translate-y-1 transition duration-300">
+                    Contact Me
+                </a>
+                <a href="files/Harshit Upadhyay-4.pdf" class="px-8 py-3 rounded-full border border-gray-600 hover:border-violet-500 text-white font-semibold hover:bg-gray-800 transition duration-300">
+                    View Resume
+                </a>
+            </div>
+
+            <div class="mt-12 flex justify-center space-x-6 text-3xl text-gray-400">
+                <a href="https://github.com/Harshit2569" class="hover:text-white transition transform hover:scale-110"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/harshit-upadhyay-88b5991b7" class="hover:text-blue-500 transition transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:harshitupadhyay610@gmail.com" class="hover:text-red-400 transition transform hover:scale-110"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Summary -->
+    <section id="about" class="py-20 bg-card">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-theme transform rotate-6 rounded-2xl opacity-20"></div>
+                        <div class="relative bg-dark p-8 rounded-2xl border border-gray-700">
+                            <h3 class="text-2xl font-bold mb-4 text-gradient">Professional Summary</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                Mobile-Development Intern with experience in building Android and web applications using React Native, Redux, and REST APIs. Contributed to live projects by implementing real-time communication, secure payments, and scalable mobile solutions. Also developed responsive web interfaces in React.js with modern design practices, ensuring clean UI and optimized performance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl font-bold mb-6">Education</h2>
+                    
+                    <div class="mb-6 p-6 rounded-xl bg-dark hover:bg-gray-900 transition border-l-4 border-violet-500">
+                        <h4 class="text-xl font-bold text-white">Master of Business Administration</h4>
+                        <p class="text-violet-400">Takshila Institute of Engineering & Technology</p>
+                        <p class="text-gray-400 text-sm mt-1">Sept 2021 – Mar 2024</p>
+                        <p class="text-gray-500 text-sm mt-2">Specialization: Finance & IT</p>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-dark hover:bg-gray-900 transition border-l-4 border-blue-500">
+                        <h4 class="text-xl font-bold text-white">Bachelor of Engineering</h4>
+                        <p class="text-blue-400">Shri Ram Institute of Technology</p>
+                        <p class="text-gray-400 text-sm mt-1">Aug 2016 – Sept 2020</p>
+                        <p class="text-gray-500 text-sm mt-2">Specialization: Mechanical Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stack -->
+    <section id="skills" class="py-20 bg-dark relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Technical <span class="text-gradient">Stack</span></h2>
+                <div class="h-1 w-20 bg-gradient-theme mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Languages -->
+                <div class="bg-card p-8 rounded-2xl shadow-lg hover:shadow-violet-500/10 transition duration-300 border border-gray-800 text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition">
+                        <i class="fab fa-js text-3xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Languages</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">JavaScript</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks -->
+                <div class="bg-card p-8 rounded-2xl shadow-lg hover:shadow-violet-500/10 transition duration-300 border border-gray-800 text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition">
+                        <i class="fab fa-react text-3xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Frameworks</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">React</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">React Native</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">Redux</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">Expo</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">ExpressJS</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">Next.js</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="bg-card p-8 rounded-2xl shadow-lg hover:shadow-violet-500/10 transition duration-300 border border-gray-800 text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 mx-auto bg-gray-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition">
+                        <i class="fas fa-tools text-3xl text-violet-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Tools & Tech</h3>
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">Git & Github</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">Firebase</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">Postman</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">REST APIs</span>
+                        <span class="px-3 py-1 bg-dark rounded-full text-sm text-gray-300 border border-gray-700">WebRTC</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Timeline Section -->
+    <section id="experience" class="py-20 bg-card relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="text-center mb-20" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Work <span class="text-gradient">Experience</span></h2>
+                <div class="h-1 w-24 bg-gradient-theme mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative mx-auto lg:w-4/5">
+                
+                <!-- Central Vertical Line -->
+                <!-- Mobile: Left aligned | Desktop: Centered -->
+                <div class="absolute left-8 md:left-1/2 h-full w-1 timeline-line transform md:-translate-x-1/2 rounded-full opacity-70"></div>
+
+                <!-- Experience Item 1: MechBuddy (Left Side) -->
+                <div class="mb-12 flex flex-col md:flex-row items-center justify-between w-full relative group">
+                    
+                    <!-- Left Content (Card) -->
+                    <div class="w-full md:w-5/12 pl-20 md:pl-0 md:pr-8" data-aos="fade-right">
+                        <div class="bg-[#0f172a] p-6 rounded-2xl border border-gray-700 hover:border-violet-500 shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group-hover:shadow-violet-500/20">
+                            <!-- Gradient Glow on Hover -->
+                            <div class="absolute top-0 left-0 w-1 h-full bg-gradient-theme"></div>
+                            
+                            <!-- Date Badge -->
+                            <span class="inline-block px-3 py-1 mb-3 text-xs font-semibold text-white bg-gradient-theme rounded-full shadow-md">
+                                Oct 2025 - Present
+                            </span>
+
+                            <h3 class="text-2xl font-bold text-white mb-1">MechBuddy</h3>
+                            <p class="text-violet-400 font-medium mb-4">Android & Web Development Intern</p>
+                            
+                            <ul class="space-y-2">
+                                <li class="flex items-start text-gray-300 text-sm">
+                                    <i class="fas fa-chevron-right text-violet-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Worked on the website using <strong>React.js</strong> and built interactive UI components.</span>
+                                </li>
+                                <li class="flex items-start text-gray-300 text-sm">
+                                    <i class="fas fa-chevron-right text-violet-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Assisted in designing and implementing responsive user interfaces.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Center Icon -->
+                    <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-dark border-4 border-[#1e293b] shadow-[0_0_15px_rgba(139,92,246,0.6)] z-20 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-briefcase text-violet-500 text-lg"></i>
+                    </div>
+
+                    <!-- Right Space (Empty) -->
+                    <div class="hidden md:block w-5/12"></div>
+                </div>
+
+                <!-- Experience Item 2: Crimsons System (Right Side) -->
+                <div class="flex flex-col md:flex-row items-center justify-between w-full relative group">
+                    
+                    <!-- Left Space (Empty) -->
+                    <div class="hidden md:block w-5/12"></div>
+
+                    <!-- Center Icon -->
+                    <div class="absolute left-8 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-dark border-4 border-[#1e293b] shadow-[0_0_15px_rgba(59,130,246,0.6)] z-20 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-laptop-code text-blue-500 text-lg"></i>
+                    </div>
+
+                    <!-- Right Content (Card) -->
+                    <div class="w-full md:w-5/12 pl-20 md:pl-8" data-aos="fade-left">
+                        <div class="bg-[#0f172a] p-6 rounded-2xl border border-gray-700 hover:border-blue-500 shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden group-hover:shadow-blue-500/20">
+                             <!-- Gradient Glow on Hover -->
+                             <div class="absolute top-0 left-0 w-1 h-full bg-gradient-theme-vertical"></div>
+                            
+                            <!-- Date Badge -->
+                            <span class="inline-block px-3 py-1 mb-3 text-xs font-semibold text-white bg-gray-800 border border-gray-600 rounded-full">
+                                Jan 2025 – Sept 2025
+                            </span>
+
+                            <h3 class="text-2xl font-bold text-white mb-1">Crimsons System</h3>
+                            <p class="text-blue-400 font-medium mb-4">Android & Web Development Intern</p>
+                            
+                            <p class="text-gray-300 text-sm leading-relaxed mb-3">
+                                Delivered multiple high-impact projects using <strong>React Native</strong> and <strong>Redux</strong>. Focused on Real-time communications and scalable LMS solutions.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs px-2 py-1 bg-blue-500/10 text-blue-300 rounded border border-blue-500/20">Food App</span>
+                                <span class="text-xs px-2 py-1 bg-blue-500/10 text-blue-300 rounded border border-blue-500/20">Astrologer App</span>
+                                <span class="text-xs px-2 py-1 bg-blue-500/10 text-blue-300 rounded border border-blue-500/20">LMS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Featured <span class="text-gradient">Projects</span></h2>
+                <p class="text-gray-400">Selected works from my tenure at Crimsons System</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <!-- <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-utensils text-2xl text-orange-400"></i>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React Native</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">Millet Kitchen Food App</h3>
+                        <p class="text-gray-400 text-sm mb-4">Food ordering app with cart management via Context API, Razorpay integration, and tracking deliveries.</p>
+                    </div>
+                </div> -->
+                <a
+  href="https://play.google.com/store/apps/details?id=com.mkf"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block"
+>
+  <div
+    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300"
+    data-aos="flip-left"
+  >
+    <div class="p-6">
+      <div class="flex justify-between items-start mb-4">
+        <i class="fas fa-utensils text-2xl text-orange-400"></i>
+        <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">
+          React Native
+        </span>
+      </div>
+
+      <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">
+        Millet Kitchen Food App
+      </h3>
+
+      <p class="text-gray-400 text-sm mb-4">
+        Food ordering app with cart management via Context API, Razorpay integration,
+        and real-time delivery tracking.
+      </p>
+    </div>
+  </div>
+</a>
+
+                <!-- Project 2 -->
+              
+                <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-star text-2xl text-purple-400"></i>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">RN + Redux</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">Astrologer App</h3>
+                        <p class="text-gray-400 text-sm mb-4">Cross-platform app enabling interaction with chat, voice, and video calling (WebRTC). Robust state management via Redux.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-graduation-cap text-2xl text-blue-400"></i>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">RN + Redux</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">Acads Learning App</h3>
+                        <p class="text-gray-400 text-sm mb-4">E-learning platform enabling interactive mentor-student sessions with integrated chat and video calling.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <!-- <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-book-open text-2xl text-green-400"></i>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React Native</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">CreoSmart LMS</h3>
+                        <p class="text-gray-400 text-sm mb-4">LMS with course listings, user progress tracking, and assessment features for a smooth learning experience.</p>
+                    </div>
+                </div> -->
+
+                <a 
+  href="https://play.google.com/store/apps/details?id=com.shreea.MyTestSeries"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="block"
+>
+    <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="300">
+        <div class="p-6">
+            <div class="flex justify-between items-start mb-4">
+                <i class="fas fa-book-open text-2xl text-green-400"></i>
+                <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React Native</span>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">
+                CreoSmart LMS
+            </h3>
+
+            <p class="text-gray-400 text-sm mb-4">
+                LMS with course listings, user progress tracking, and assessment features for a smooth learning experience.
+            </p>
+        </div>
+    </div>
+</a>
+
+                <!-- Project 5 -->
+                
+                <div class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-violet-500 transition duration-300" data-aos="flip-left" data-aos-delay="400">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-school text-2xl text-red-400"></i>
+                            <span class="text-xs bg-gray-800 px-2 py-1 rounded text-gray-400">React.js</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-violet-400 transition">Raksha School Website</h3>
+                        <p class="text-gray-400 text-sm mb-4">Responsive, SEO-friendly website with performance optimization using React.js and Bootstrap.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-black pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Let's <span class="text-gradient">Connect</span></h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-12">
+                <div class="flex items-center space-x-3 text-gray-300">
+                    <i class="fas fa-phone text-violet-500"></i>
+                    <span>8770718118</span>
+                </div>
+                <div class="flex items-center space-x-3 text-gray-300">
+                    <i class="fas fa-envelope text-violet-500"></i>
+                    <span>harshitupadhyay610@gmail.com</span>
+                </div>
+                <div class="flex items-center space-x-3 text-gray-300">
+                    <i class="fas fa-map-marker-alt text-violet-500"></i>
+                    <span>Jabalpur, Madhya Pradesh</span>
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="https://github.com/Harshit2569" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-violet-600 transition duration-300 text-white">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/harshit-upadhyay-88b5991b7" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition duration-300 text-white">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
+            <p class="text-gray-600 text-sm">© 2025 Harshit Upadhyay. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Animation happens only once - while scrolling down
+            offset: 100,
+            duration: 800,
+            easing: 'ease-in-out',
+        });
+    </script>
+</body>
+</html>
